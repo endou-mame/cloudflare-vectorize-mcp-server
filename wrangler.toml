@@ -1,0 +1,49 @@
+name = "cloudflare-vectorize-mcp-server"
+main = "src/index.ts"
+compatibility_date = "2024-09-25"
+compatibility_flags = ["nodejs_compat"]
+
+# 開発環境設定
+[env.development]
+name = "cloudflare-vectorize-mcp-server-dev"
+
+# ステージング環境設定  
+[env.staging]
+name = "cloudflare-vectorize-mcp-server-staging"
+
+# プロダクション環境設定
+[env.production]
+name = "cloudflare-vectorize-mcp-server-prod"
+
+# Vectorize バインディング（実際のインデックス名は後で設定）
+[[vectorize]]
+binding = "VECTORIZE_INDEX"
+index_name = "rag-index"
+
+# KV ストレージ（キャッシュ用）
+[[kv_namespaces]]
+binding = "CACHE_KV"
+id = "preview_id"
+preview_id = "preview_id"
+
+# KV ストレージ（認証トークン用）
+[[kv_namespaces]]
+binding = "AUTH_KV"
+id = "preview_id"
+preview_id = "preview_id"
+
+# Durable Objects（レート制限用）
+[[durable_objects.bindings]]
+name = "RATE_LIMITER"
+class_name = "RateLimiter"
+
+# 環境変数
+[vars]
+ENVIRONMENT = "development"
+LOG_LEVEL = "debug"
+MCP_SERVER_VERSION = "1.0.0"
+
+# プロダクション環境の環境変数
+[env.production.vars]
+ENVIRONMENT = "production"
+LOG_LEVEL = "info"

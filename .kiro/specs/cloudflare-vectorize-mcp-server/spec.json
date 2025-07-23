@@ -1,0 +1,28 @@
+{
+  "feature_name": "cloudflare-vectorize-mcp-server",
+  "project_description": "cloudflare worker で remote-mcp server を streamable http transport で実装したい。remote-mcp server はcloudflare vectorize に構築した 任意の RAG に対して検索し、結果を返す mcp server としたい。",
+  "created_at": "2025-07-24T01:54:00Z",
+  "updated_at": "2025-07-23T17:12:59Z",
+  "language": "japanese",
+  "phase": "tasks-generated",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": true
+    },
+    "tasks": {
+      "generated": true,
+      "approved": true
+    }
+  },
+  "progress": {
+    "requirements": 100,
+    "design": 100,
+    "tasks": 100
+  },
+  "ready_for_implementation": false
+}
